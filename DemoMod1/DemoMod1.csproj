@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>DemoMod1.TestPerson</StartupObject>
+    <StartupObject>DemoMod1.ListDemo</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,14 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animal.cs" />
-    <Compile Include="animalTest.cs" />
+    <Compile Include="AnimalTest.cs" />
     <Compile Include="Circle.cs" />
+    <Compile Include="EnumDemo.cs" />
     <Compile Include="FirstDemo.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="ListDemo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rectangle.cs" />
-    <Compile Include="TestPerson.cs" />
     <Compile Include="TestShape.cs" />
   </ItemGroup>
   <ItemGroup>

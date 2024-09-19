@@ -35,7 +35,7 @@ namespace Lab1
 
         public static void DisplayPersonInfo(Person p)
         {
-            Console.WriteLine($"{p.FirstName} {p.LastName}'s info:\nID: {p.PersonId}\nFavorite Color: {p.FavoriteColor}\nAge: {p.Age}\nIs Working: {p.IsWorking}");
+            Console.WriteLine($"{p.PersonId}: {p.FirstName} {p.LastName}'s favorite color is {p.FavoriteColor}\n");
         }
 
         public static string ChangeFavoriteColor(Person p, string newColor)
@@ -51,7 +51,7 @@ namespace Lab1
 
         public override string ToString()
         {
-            return $"First Name: {FirstName}\nLast Name: {LastName}\nID: {PersonId}\nFavorite Color: {FavoriteColor}\nAge: {Age}\nIs Working: {IsWorking}";
+            return $"PersonId: {PersonId}\nFirstName: {FirstName}\nLastName: {LastName}\nFavoriteColor: {FavoriteColor}\nAge: {Age}\nIsWorking: {IsWorking}\n";
         }
     }
 }

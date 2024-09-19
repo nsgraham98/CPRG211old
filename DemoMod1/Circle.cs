@@ -11,32 +11,40 @@ namespace DemoMod1
         public const double PI = Math.PI;
         double radius;
         string color;
-        public static int numberOfCircles; //static remembers value in this context (will not be re-initialized every time)
 
         public double Radius { get => radius; set => radius = value; }
         public string Color { get => color; set => color = value; }
 
-        // Non parameterized constructor
-        // Same name as that of class --- special method
-        // only used to initialize the members of a class
-        // called automatically at the time of creation of object
-        // ctor + tab -> non parameterized constructor shortcut
-        public Circle() // Non Parameterized contructor
+        //Non parameterized constructor
+        //same name as that of class  --- special method
+        //intialize the members of a class
+        //called automatically at the time of creation of object 
+        //ctor + tab --- for non parameterized constructor
+        //1st
+        public Circle() // Non parameterized constructor
         {
             Radius = 1;
-            Color = "white";
-            numberOfCircles++; //1
+            Color  = "White";
         }
 
-        // formal parameters
-        public Circle(double radius, string color) // Parameterized constructor
+        //formal parameters
+        // public Circle(double r, string c)
+        //2nd
+        public Circle(double radius, string color) // parameterized constructor
         {
-            this.radius = radius; // actual = formal parameter (similar to self.xyz in python)
+            this.radius = radius;  // actual = formal parameter
+            //radius = r;
+            //color = c;
             this.color = color;
-            numberOfCircles++; //2
-
         }
 
+        //3rd
+        public Circle(string color, double radius) // parameterized constructor
+        {
+            this.radius = radius;  // actual = formal parameter
+            this.color = color;
+
+        }
         public double CalculateArea() // user defined method
         {
             return PI * Math.Pow(Radius, 2);
@@ -44,7 +52,9 @@ namespace DemoMod1
 
         public override string ToString()
         {
-            return $"Circle with radius: {Radius} and Color: {Color}";
+            //return base.ToString();
+            return $"Circle with a radius: {Radius} and Color: {Color} ";
+
         }
     }
 }

@@ -10,22 +10,18 @@ namespace DemoMod1
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("Circle 1 Details");
             Circle c1 = new Circle();
-            //c1.Circle(); // 
-            Console.WriteLine("Circle 1 details:");
+            //c1.Circle(); // Cant call a constructor explicitely
             Console.WriteLine(c1);
-            Console.WriteLine($"Number of circles: {Circle.numberOfCircles}"); //use Circle. instead of c1. because static variable needs to be referenced by class (not by object)
 
-            Circle c2 = new Circle(5, "red");
-            Console.WriteLine("\nCircle 2 details:");
+            Console.WriteLine("Circle 2 Details");
+            Circle c2 = new Circle(5, "Red");
             Console.WriteLine(c2);
-            Console.WriteLine($"Number of circles: {Circle.numberOfCircles}");
 
-
-            Rectangle rectangle = new Rectangle();
-            Console.WriteLine(rectangle);
-
-
+            Console.WriteLine("Circle 3 Details");
+            Circle c3 = new Circle("Blue", 9);
+            Console.WriteLine(c3);
 
 
             Console.ReadLine();
