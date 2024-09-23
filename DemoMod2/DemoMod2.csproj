@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ECD886B7-0526-4684-94D7-56B33EB4EC98}</ProjectGuid>
+    <ProjectGuid>{CD2D93D3-7481-42D9-8DB8-CB912485555B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DemoMod1</RootNamespace>
-    <AssemblyName>DemoMod1</AssemblyName>
+    <RootNamespace>DemoMod2</RootNamespace>
+    <AssemblyName>DemoMod2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>DemoMod1.TestShape</StartupObject>
+    <StartupObject>DemoMod2.Driver</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,18 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animal.cs" />
-    <Compile Include="AnimalTest.cs" />
     <Compile Include="Circle.cs" />
-    <Compile Include="EnumDemo.cs" />
-    <Compile Include="FirstDemo.cs" />
-    <Compile Include="ListDemo.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="Driver.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rectangle.cs" />
-    <Compile Include="TestPerson.cs" />
-    <Compile Include="TestShape.cs" />
+    <Compile Include="Shape.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

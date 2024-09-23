@@ -11,6 +11,9 @@ namespace DemoMod1
         public const double PI = Math.PI;
         double radius;
         string color;
+        public static int numberOfCircles; // static members are linked with a class and can be accessed 
+                                           // by class name NOT by object name
+
 
         public double Radius { get => radius; set => radius = value; }
         public string Color { get => color; set => color = value; }
@@ -25,6 +28,7 @@ namespace DemoMod1
         {
             Radius = 1;
             Color  = "White";
+            numberOfCircles++; //1
         }
 
         //formal parameters
@@ -36,6 +40,7 @@ namespace DemoMod1
             //radius = r;
             //color = c;
             this.color = color;
+            numberOfCircles++; //2
         }
 
         //3rd
@@ -43,6 +48,7 @@ namespace DemoMod1
         {
             this.radius = radius;  // actual = formal parameter
             this.color = color;
+            numberOfCircles++; //3
 
         }
         public double CalculateArea() // user defined method
