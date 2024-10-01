@@ -11,7 +11,7 @@ namespace Lab2
     {
         public static void Main(string[] args)
         {            
-            LoadEmployees();
+            Console.WriteLine($"The average pay for all employees is: {AveragePay()}");
             Console.ReadLine();
         }
 
@@ -48,6 +48,46 @@ namespace Lab2
                 }
             }
             return employeeList;
+        }
+
+        public static double AveragePay() //done
+        {
+            List<Employee> employeeList = new List<Employee>(LoadEmployees());
+            double totalPay = 0;
+            int count = 0;
+            foreach (Employee emp in employeeList)
+            {
+                if(emp is Salaried)
+                {
+                    totalPay += Salaried.GetPay((Salaried)emp);
+                    count++;
+                }
+                if(emp is Wages)
+                {
+                    totalPay += Wages.GetPay((Wages)emp);
+                    count++;
+                }
+                if(emp is PartTime)
+                {
+                    totalPay += PartTime.GetPay((PartTime)emp);
+                    count++;
+                }                    
+            }
+            double finalAverage = totalPay / count;
+            return finalAverage;
+        }
+
+        public static double HighestPay()
+        {
+            List<Employee> employeeList = new List<Employee>(LoadEmployees());            
+            foreach (Employee emp in employeeList)
+            {
+                if ((emp is Wages))
+                {
+                    double initialValue = Wages.GetPay((Wages)emp);
+                }
+            }
+            return 0;
         }
     }
 }

@@ -19,14 +19,16 @@ namespace Lab2
             this.Salary = salary;
         }
 
-        public double GetPay()
+        public static double GetPay(Salaried emp)
         {
-            return 0;
+            double pay = emp.Salary / 52;
+            return pay;
         }
 
         public override string ToString()
         {
-            return base.ToString();
+            //return base.ToString();
+            return $"Salaried Employee\nId: {Id}\nName: {Name}\nAddress: {Address}\nPhone: {Phone}\nSIN: {Sin}\nDOB: {Dob}\nDepartment: {Dept}\nSalary: {Salary}";
         }
     }
 }
