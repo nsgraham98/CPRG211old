@@ -33,7 +33,8 @@ namespace DemoMod2
             get { return "Green"; }
         }
 
-        public override void printInfo() // overrides virtual printInfo() in parent class
+        public sealed override void printInfo() // overrides virtual printInfo() in parent class
+                                                // sealed disallows overriding in child classes
         {
             Console.WriteLine("\n Circle Information");
             Console.WriteLine($"Circle Color: {Color}");

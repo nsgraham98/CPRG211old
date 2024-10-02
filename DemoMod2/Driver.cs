@@ -33,7 +33,15 @@ namespace DemoMod2
             Rectangle r1 = new Rectangle("Yellow", true, DateTime.Now, 6.5, 5.2);
             Console.WriteLine(r1);
 
+
+            // a // is NOT accessable (protected int a from Shapes.cs)
+            // b // IS accessable (internal int b from Shapes.cs) 
+
+
+
             Console.ReadLine();
+
+
         }
     }
 }

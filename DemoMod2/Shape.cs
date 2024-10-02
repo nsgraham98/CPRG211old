@@ -11,14 +11,20 @@ namespace DemoMod2
         string color;
         bool filled;
         DateTime dateCreated;
+        private int a;
+        private int b;
 
         public string Color { get => color; set => color = value; }
         public bool Filled { get => filled; set => filled = value; }
         public DateTime DateCreated { get => dateCreated; set => dateCreated = value; }
+        protected int A { get => a; set => a = value; }
+        internal int B { get => b; set => b = value; }
 
         public Shape() // default constructor
         {
             this.Color = "Pink";
+            this.a = 10;
+            this.b = 5;
         }
 
         public Shape(string color, bool filled, DateTime dateCreated)
