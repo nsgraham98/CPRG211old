@@ -38,7 +38,8 @@ namespace Lab2
         }
         public override string ToString()
         {
-            return base.ToString();
+            //return base.ToString();
+            return $" Employee\nId: {Id}\nName: {Name}\nAddress: {Address}\nPhone: {Phone}\nSIN: {Sin}\nDOB: {Dob}\nDepartment: {Dept}";
         }
     }
 }

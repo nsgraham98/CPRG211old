@@ -12,6 +12,9 @@ namespace Lab2
         public static void Main(string[] args)
         {            
             Console.WriteLine($"The average pay for all employees is: {AveragePay()}");
+            Console.WriteLine($"The Wages employee with the highest pay is: {CalcHighestPay().Name}");
+            Console.WriteLine($"The Salaried employee with the lowest pay is: {CalcLowestPay().Name}");
+            CalcDistribution();
             Console.ReadLine();
         }
 
@@ -50,7 +53,7 @@ namespace Lab2
             return employeeList;
         }
 
-        public static double AveragePay() //done
+        public static double AveragePay()
         {
             List<Employee> employeeList = new List<Employee>(LoadEmployees());
             double totalPay = 0;
@@ -77,17 +80,73 @@ namespace Lab2
             return finalAverage;
         }
 
-        public static double HighestPay()
+        public static Wages CalcHighestPay()
         {
-            List<Employee> employeeList = new List<Employee>(LoadEmployees());            
+            List<Employee> employeeList = new List<Employee>(LoadEmployees());
+            Wages highestWageObj = null;
+            double highestPay = 0;
             foreach (Employee emp in employeeList)
             {
-                if ((emp is Wages))
+                if (emp is Wages)
                 {
-                    double initialValue = Wages.GetPay((Wages)emp);
+                    if ((Wages.GetPay((Wages)emp) > highestPay))
+                    {
+                        highestPay = Wages.GetPay((Wages)emp);
+                        highestWageObj = ((Wages)emp);
+                    }
                 }
             }
-            return 0;
+            return highestWageObj;
+        }
+
+        public static Salaried CalcLowestPay()
+        {
+            List<Employee> employeeList = new List<Employee>(LoadEmployees());
+            Salaried lowestSalObj = null;
+            double lowestPay = double.MaxValue;
+            foreach (Employee emp in employeeList)
+            {
+
+                if (emp is Salaried)
+                {
+                    if (Salaried.GetPay((Salaried)emp) < lowestPay)
+                    {
+                        lowestPay = Salaried.GetPay((Salaried)emp);
+                        lowestSalObj = ((Salaried)emp);
+                    }
+                }
+            }
+            return lowestSalObj;
+        }
+
+        public static void CalcDistribution()
+        {
+            List<Employee> employeeList = new List<Employee>(LoadEmployees());
+            double salCount = 0;
+            double wageCount = 0;
+            double ptCount = 0;
+            double totalCount = 0;
+            foreach (Employee emp in employeeList)
+            {
+                if (emp is Salaried)
+                {
+                    salCount++;
+                    totalCount++;
+                }
+                if (emp is Wages)
+                {
+                    wageCount++;
+                    totalCount++;
+                }
+                if (emp is PartTime)
+                {
+                    ptCount++;
+                    totalCount++;
+                }
+            }
+            Console.WriteLine($"Percentage of Salaried employees is {(salCount / totalCount) * 100}%");
+            Console.WriteLine($"Percentage of Wages employees is {(wageCount / totalCount) * 100}%");
+            Console.WriteLine($"Percentage of Part Time employees is {(ptCount / totalCount) * 100}%");
         }
     }
 }
